@@ -1,3 +1,3 @@
 # stock-ticker
 
-Get Daily Stock Ticker (Close)
+Get Daily Stock Ticker (Close). Display Chart in Retool App.
