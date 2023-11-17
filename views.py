@@ -1,7 +1,6 @@
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta
-from typing import Any, Union
-from flask import make_response, url_for, render_template, jsonify
+from flask import render_template, jsonify
 from flask import request as flask_request
 from flask import Response
 from models import db, Ticker

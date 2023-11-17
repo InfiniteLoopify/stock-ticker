@@ -4,9 +4,6 @@ from routes import view_routes
 
 
 app = Flask(__name__)
-# !https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=tesco&apikey=demo
-# !https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey=demo
-
 
 def init_config():
     app.register_blueprint(blueprint=view_routes)
