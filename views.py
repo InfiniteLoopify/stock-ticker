@@ -8,11 +8,15 @@ from models import db, Ticker
 import utils
 
 
+def display_template() -> str:
+    link = utils.IFRAME_LINK
+    return render_template("index.html", link=link)
+
+
 def get_symbols_info() -> tuple[Response, int]:
     columns = flask_request.args.get("columns", "Symbol,Name,Country")
     columns = list(set(columns.split(",")))
     response = utils.csv_to_obj(columns=columns)
-    print(response)
     return jsonify(response), 200
 
 

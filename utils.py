@@ -7,7 +7,8 @@ from datetime import datetime
 
 DATETIME_FORMAT = "%Y-%m-%d"
 API_KEY = os.environ.get("API_KEY", "demo")
-API_KEY = "demo"
+IFRAME_LINK = os.environ.get("IFRAME_LINK", "")
+# API_KEY = "demo"
 
 
 def to_dict(model, columns: list[str | tuple] | None = None) -> dict:
@@ -59,9 +60,3 @@ def csv_to_obj(
     except Exception as e:
         return []
     return obj
-
-
-if __name__ == "__main__":
-    pass
-    # fetch_alphavantage_ticker_api()
-    # csv_to_obj(columns=["Symbol", "Name", "Country"])
