@@ -24,9 +24,8 @@ def get_tickers() -> tuple[Response, int]:
     tickers = list(set(tickers.upper().split()))
 
     show_all = flask_request.args.get("all", "")
-    show_all = True if show_all.lower() == "true" else False
 
-    if show_all:
+    if show_all := True if show_all.lower() == "true" else False:
         return get_stored_tickers(list_all=show_all)
     return fetch_and_get_selected_tickers(tickers)
 
@@ -56,9 +55,8 @@ def fetch_and_get_selected_tickers(tickers: list[str]) -> tuple[Response, int]:
 
     for ticker in tickers:
         ticker_search = db.session.query(Ticker).filter_by(name=ticker).first()
-        ticker_outdated = None if not ticker_search else ticker_search.last_updated
 
-        if ticker_outdated:
+        if ticker_outdated := None if not ticker_search else ticker_search.last_updated:
             ticker_outdated = datetime.strptime(ticker_outdated, utils.DATETIME_FORMAT)
             ticker_outdated = ticker_outdated < datetime.now() - timedelta(hours=48)
 
@@ -84,8 +82,7 @@ def ticker_insert_or_update(ticker_json: dict) -> None:
     last_date = ticker_json.get("last_date", "")
     data = ticker_json.get("data", {})
 
-    ticker_obj = db.session.query(Ticker).filter_by(name=symbol).first()
-    if ticker_obj:
+    if ticker_obj := db.session.query(Ticker).filter_by(name=symbol).first():
         ticker_obj.last_updated = last_date
         ticker_obj.data = data
     else:
