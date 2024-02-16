@@ -27,7 +27,7 @@ def to_dict(model, columns: list[str | tuple] | None = None) -> dict:
 def fetch_alphavantage_ticker_api(ticker: str = "IBM") -> dict:
     url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={ticker}&apikey={API_KEY}"
 
-    response = requests.request("GET", url)
+    response = requests.request("GET", url, timeout=60)
     return response.json()
 
 
