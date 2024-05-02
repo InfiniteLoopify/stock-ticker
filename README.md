@@ -142,18 +142,21 @@ To use the program, follow these steps:
     ```bash
     touch .env
     ```
-2. Store your Credentials in your environment variable file:
+2. Store your Config variables in your environment variable file:
     ```bash
     # inside .env file
-    USERNAME=example@gmail.com
-    PASSWORD=my password
+    API_KEY=my_key # key for www.alphavantage.co API
+    IFRAME_LINK=link # iframe link to retool app
     ```
 3. Make sure you have activated the virtual environment.
 4. Run the program:
     ```bash
-    python main.py
+    python run.py
     ```
-
+5. Use `pytest` to run tests in the terminal:
+    ```bash
+    pytest
+    ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
