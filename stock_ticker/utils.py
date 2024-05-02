@@ -5,6 +5,7 @@ import requests
 import os
 from datetime import datetime
 
+
 DATETIME_FORMAT = "%Y-%m-%d"
 API_KEY = os.environ.get("API_KEY", "demo")
 IFRAME_LINK = os.environ.get("IFRAME_LINK", "")

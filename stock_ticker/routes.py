@@ -1,5 +1,5 @@
 from flask import Blueprint
-import views
+from stock_ticker import views
 
 view_routes = Blueprint("view_routes", __name__)
 
