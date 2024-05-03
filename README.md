@@ -65,8 +65,17 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+Daily Stock Ticker (close) using `Flask` for backend and `Retool` for Interface. Uses [Alpha Vantage Api Key](alphavantage.co) to get daily closed stock tickers.
 
-![Screenshot](images/screenshot.png)
+
+![Screenshot](images/screenshot-selected.png)
+*show selected tickers*
+
+![Screenshot](images/screenshot-all.png)
+*show all tickers*
+
+![Screenshot](images/screenshot-search.png)
+*ticker search bar*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
